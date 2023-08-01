@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <h1>CODE PARK 6 -MÓDULO 2 - LÓGICA DE PROGRAMAÇÃO</h1>
+        <h2>Aluno: Marcos Antonio Emiliano Alves Júnior </h2>
+        <h2>Desenvolvedor Back End - Softex/Manhã (Seg/Qua)</h2>
+        <script>
+
+            alert("CALCULADORA \nInsira dois números e ,em seguida ,escolha a operação na qual quer efetuar o calculo.  ");
+
+            function operacao(a,b,ope) {
+               var s
+               switch(ope){
+                    case 1:
+                        s = "A SOMA de "+a+" e "+b+" é : "+ (a+b)
+                         break
+                    case 2:
+                        s = "A SUBTRAÇÃO de "+a+" e "+b+" é : "+ (a-b)
+                         break
+                    case 3:
+                         s = "A MULTIPLICAÇÃO de "+a+" e "+b+" é : "+ (a*b)
+                         break
+                     case 4:
+                         s = "A DIVISÃO de "+a+" e "+b+" é : "+ (a/b)
+                         break
+                    default:
+                        s = "Operador inexistente. Resultado = 0"
+
+                }
+                return s
+          }
+                
+           var n1 = prompt("Digite o primeiro número:");
+                n1=parseFloat(n1);// declarando que o número é do tipo real
+           var n2 = parseFloat(prompt("Digite o segundo número: ")); //outra forma de expressar n2=parseFloat(n2);
+           var op =parseInt( prompt("Informe o número da operação na qual quer efetuar:\n1. Soma\n2. Subtração\n3. Multiplicação\n4. Divisão"));//tipo inteiro
+            var res = operacao(n1,n2,op);//Chamando a função e armazenando o retorno na variável res
+            alert(res)
+          
+
+        </script>
+    </body>
+</html>
