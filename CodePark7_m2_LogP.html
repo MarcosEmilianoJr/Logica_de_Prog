@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <h1>CODE PARK 7 -MÓDULO 2 - LÓGICA DE PROGRAMAÇÃO</h1>
+        <h2>Aluno: Marcos Antonio Emiliano Alves Júnior </h2>
+        <h2>Desenvolvedor Back End - Softex/Manhã (Seg/Qua)</h2>
+        <script>
+
+function calculadora(a) {
+               var n1,n2,s
+               switch(a){
+                    case 1:
+                        n1 = parseFloat(prompt("Opção escolhida: SOMA \n Digite o primeiro número: "));
+                        n2 = parseFloat(prompt("Opção escolhida: SOMA \n Digite o segundo número: "));
+                        s = n1+" + "+n2+" = "+ (n1+n2);
+                        break
+                    case 2:
+                        n1 = parseFloat(prompt("Opção escolhida: SUBTRAÇÃO \n Digite o primeiro número: "));
+                        n2 = parseFloat(prompt("Opção escolhida: SUBTRAÇÃO \n Digite o segundo número: "));
+                        s = n1+" - "+n2+" = "+ (n1-n2);
+                        break
+                    case 3:
+                        n1 = parseFloat(prompt("Opção escolhida: MULTIPLICAÇÃO \n Digite o primeiro número: "));
+                        n2 = parseFloat(prompt("Opção escolhida: MULTIPLICAÇÃO \n Digite o segundo número: "));
+                        s = n1+" * "+n2+" = "+ (n1*n2);
+                        break
+                    case 4:
+                        n1 = parseFloat(prompt("Opção escolhida: DIVISÃO \n Digite o primeiro número: "));
+                        n2 = parseFloat(prompt("Opção escolhida: DIVISÃO \n Digite o segundo número: "));
+                        s = n1+" / "+n2+" = "+ (n1/n2);
+                        break
+                    case 0:
+                        
+                        break
+                    default:
+                        s = "Essa opção não existe.";
+               }
+               return s
+            }
+
+
+           do{
+          
+            var r = parseInt(prompt("CALCULADORA\nSelecione a opção desejada: \n 1.Soma \n 2.Subtração \n 3.Multiplicação \n 4.Divisão \n 0.Sair "));
+
+           if(r != 0){
+                var resp = calculadora(r);
+                alert(resp);
+           }
+
+           }while(r != 0)
+
+
+
+
+
+
+
+
+
+
+
+    
+           
+          
+
+        </script>
+    </body>
+</html>
