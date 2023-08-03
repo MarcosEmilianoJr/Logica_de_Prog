@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro de usuário</title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+
+        <h1>CODE PARK 8 - MÓDULO 2 - LÓGICA DE PROGRAMAÇÃO</h1>
+        <h2>Aluno : Marcos Antonio Emiliano Alves Júnior</h2>
+        <h2>Desenvolvedor Back End - Softex/Manhã (Seg/Qua)</h2>
+        <script>
+
+            var ret = false
+            var nome = prompt("Digite o seu nome completo : ")
+         
+            while(ret==false){
+                
+             var anoNasc = parseInt(prompt("Digite o ano de seu nascimento \n (Deve ser entre os anos 1922 a 2021): "));
+             var idade = 2022 - anoNasc;
+                try{
+                    if(!isNaN(anoNasc)){  
+                        if(idade==1){  //no caso em que nasceu em 2021
+                            alert("INFORMAÇÕES DO USUÁRIO :\n\n Nome : "+ nome + ".\n Sua idade em 2022 é/será : " + idade + " ano.");
+                            ret = true;
+                        }
+                        else if(anoNasc>=1922 && anoNasc<=2021){ 
+                        
+                            alert("INFORMAÇÕES DO USUÁRIO :\n\n Nome : "+ nome + ".\n Sua idade em 2022 é/será : " + idade + " anos.");
+                            ret = true;
+
+                        }else {   //nos casos  em que o Ano de nascimento não esta no período entre 1922 a 2021
+                            throw new Error("O ANO DE NASCIMENTO deve está no período entre 1922 e 2021.\nDigite novamente! ");
+                        }
+                    }
+                    
+                    else{  //nos caso que esteja vazio ou apenas strings
+                        throw new Error("ANO DE NASCIMENTO inválido.\nDigite novamente!");
+                
+                    }
+                }
+                catch(err){
+                    alert(err);
+                }
+                
+            }
+          
+        </script>
+            
+    </body>
+</html>
