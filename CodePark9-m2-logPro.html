@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simul. Eleição</title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+
+        <h1>CODE PARK 9 - MÓDULO 2 - LÓGICA DE PROGRAMAÇÃO</h1>
+        <h1>(Urna eletrônica)</h1>
+        <h2>Aluno : Marcos Antonio Emiliano Alves Júnior</h2>
+        <h2>Desenvolvedor Back End - Softex/Manhã (Seg/Qua)</h2>
+        
+        <script>
+            const candidatos ={
+                candidato_x : 889,
+                candidato_y : 847,
+                candidato_z : 515,
+                branco : 0
+            }
+
+            let votosCand = {   //contador de votos.
+                candidato_x : 0,
+                candidato_y : 0,
+                candidato_z : 0,
+                branco : 0,
+                nulo : 0
+            }
+
+            function votos (ap){  //função para incrementar votos no contador.
+
+                switch(ap){
+                    case 889 :
+                        votosCand.candidato_x++
+                        break;
+                    case 847 :
+                        votosCand.candidato_y++
+                        break;
+                    case 515 :
+                        votosCand.candidato_z++
+                        break;
+                    case 0 :
+                        votosCand.branco++
+                        break;
+                    default : 
+                        votosCand.nulo++           
+                } 
+                return
+            
+            }
+            function apuracaoEleicao() {  //Ordenar o vencedor da votação.
+                var vencedor = null;
+
+                if ((votosCand.candidato_x > votosCand.candidato_y) && (votosCand.candidato_x > votosCand.candidato_z)) {
+                    vencedor = "Candidato_X";
+                }
+                if ((votosCand.candidato_y > votosCand.candidato_x) && (votosCand.candidato_y > votosCand.candidato_z)) {                    
+                    vencedor = "Candidato_Y";
+                }
+                if ((votosCand.candidato_z > votosCand.candidato_y) && (votosCand.candidato_z > votosCand.candidato_x)) {                   
+                    vencedor = "Candidato_Z";
+                }
+
+                return vencedor || "Empate";
+            }
+
+            function resultadoEleicao() { // mensagem mostrando o vencedor e os votos que cada um recebeu.
+                alert("RESULTADO FINAL DA ELEIÇÃO:\n Candidato_x: "+ votosCand.candidato_x +"\n Candidato_Y: "+ votosCand.candidato_y + "\n Candidato_z: "+ votosCand.candidato_z +"\n Branco: "+ votosCand.branco + "\n Nulo: "+ votosCand.nulo +"\n\n VENCEDOR: "+ apuracaoEleicao())
+
+                
+            }
+
+            
+
+                //Início do algaritmo
+
+                var fimEleicao = false;
+                while(fimEleicao == false){ //laço que permanece até o fim da Eleição.
+            
+                    var confVoto = false
+                    while(confVoto == false){  //laço que permanece até a confirmação do voto.
+
+                        var voto= prompt("                            _ELEIÇÕES 2023_\nPara votar,digite o respectivo número das seguintes opções:\n cadidato_X : 889\n candidato_Y : 847\n candidato_Z : 515\n Branco : 0\nCaso queira realizar a apuração, digite a palavra: FIM .");
+                        if(voto == "FIM"){ // comando para encerrar a eleição.
+                            fimEleicao = true;
+                            confVoto = true;
+                            
+                        }if(voto !== "FIM"){
+                            if(voto === "" || !isNaN(voto)){// Quando a variável voto for número ou vazio, executará os comandos atrelados.
+                                voto = parseInt(voto);                         
+                                votos(voto);
+                                confVoto = String(prompt("Seu voto foi: "+ voto +"\nDeseja confirmar? [Sim/Não]"));
+                                    if(confVoto == "Sim"){
+                                        alert("Votação realizada com sucesso!")
+                                        confVoto = true //comando de connfirmação de voto(Quebra do laço confVoto)
+                                    }else if(confVoto == "Não"){
+                                        confVoto = false 
+                                    }else{
+                                        alert("Digite apenas Sim ou Não.Vote novamente!")// Respostas diferentes de "Sim" ou "Não" não são aceitas,votando assim a votação
+                                    }                   
+                                    
+                            }
+                            else{ //Quando a variável voto for DIFERENTE de número ou vazio, repetirá o proceso de votação.
+                                alert("Não é aceito letras. Vote novamente!")
+                            }
+                        }
+                    }
+                }
+                   resultadoEleicao(); // Mensagem mostrando o Resultado Final.
+            
+
+          
+        </script>
+            
+    </body>
+</html>
