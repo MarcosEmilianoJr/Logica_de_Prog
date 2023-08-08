@@ -58,16 +58,13 @@
 
                 return vencedor || "Empate";
             }
-
+            
             function resultadoEleicao() { // mensagem mostrando o vencedor e os votos que cada um recebeu.
                 alert("RESULTADO FINAL DA ELEIÇÃO:\n Candidato_x: "+ votosCand.candidato_x +"\n Candidato_Y: "+ votosCand.candidato_y + "\n Candidato_z: "+ votosCand.candidato_z +"\n Branco: "+ votosCand.branco + "\n Nulo: "+ votosCand.nulo +"\n\n VENCEDOR: "+ apuracaoEleicao())
-
-                
+               
             }
 
-            
-
-                //Início do algaritmo
+              //Início do algaritmo
 
                 var fimEleicao = false;
                 while(fimEleicao == false){ //laço que permanece até o fim da Eleição.
@@ -101,11 +98,7 @@
                         }
                     }
                 }
-                   resultadoEleicao(); // Mensagem mostrando o Resultado Final.
-            
-
-          
-        </script>
-            
+                   resultadoEleicao(); // Mensagem mostrando o Resultado Final.          
+        </script>            
     </body>
 </html>
